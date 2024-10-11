@@ -3,14 +3,14 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin",
+      -- colorscheme = "catppuccin",
     },
   },
   -- catppuccin theme configuration
   {
     "catppuccin/nvim",
     name = "catppuccin",
-    priority = 1000,
+    -- priority = 1000,
     config = function()
       require("catppuccin").setup({
         color_overrides = {
@@ -33,7 +33,7 @@ return {
           },
         },
       })
-      vim.cmd.colorscheme("catppuccin")
+      -- vim.cmd.colorscheme("catppuccin")
     end,
   },
 }

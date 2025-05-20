@@ -5,43 +5,50 @@ return {
   { "nyoom-engineering/oxocarbon.nvim" },
   { "EdenEast/nightfox.nvim" },
   { "olivercederborg/poimandres.nvim" },
-  -- Add and configure catppuccin theme
   {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    -- priority = 1000,
+    "folke/tokyonight.nvim",
+  },
+  {
+    "cesaralvarod/tokyogogh.nvim",
+    lazy = false,
+    priority = 1000,
+  },
+  {
+    "sainnhe/everforest",
     config = function()
-      require("catppuccin").setup({
-        color_overrides = {
-          mocha = {
-            base = "#1c1917",
-            blue = "#22d3ee",
-            green = "#86efac",
-            flamingo = "#D6409F",
-            lavender = "#DE51A8",
-            pink = "#f9a8d4",
-            red = "#fda4af",
-            maroon = "#f87171",
-            mauve = "#D19DFF",
-            text = "#E8E2D9",
-            sky = "#7ee6fd",
-            yellow = "#fde68a",
-            rosewater = "#f4c2c2",
-            peach = "#fba8c4",
-            teal = "#4fd1c5",
-          },
-        },
-      })
-      -- vim.cmd.colorscheme("catppuccin")
+      vim.g.everforest_disable_italic_comment = true
+      vim.g.everforest_enable_italic = false
     end,
+  },
+  {
+    "Shatur/neovim-ayu",
+  },
+  {
+    "cpea2506/one_monokai.nvim",
+    transparent = true,
+    colors = {},
+    highlights = function(colors)
+      return {}
+    end,
+    italics = true,
   },
 
   -- Configure LazyVim to load catppuccin
   {
     "LazyVim/LazyVim",
     opts = {
-      -- colorscheme = "catppuccin",
-      colorscheme = "nightfox",
+      -- colorscheme = "everforest",
+      -- colorscheme = "asuna_dark",
+      -- colorscheme = "ayu-mirage",
+      -- colorscheme = "everforest",
+      colorscheme = "one_monokai",
+      -- colorscheme = "tokyonight",
+      -- colorscheme = "catppuccin-mocha",
+      -- colorscheme = "catppuccin-latte",
+      -- colorscheme = "catppuccin-macchiato",
+      -- colorscheme = "catppuccin-frappe",
+      -- colorscheme = "tokyonight-day",
+      -- colorscheme = "nightfox",
     },
   },
 }

@@ -1,76 +1,137 @@
--- Pull in the wezterm API
 local wezterm = require("wezterm")
 
--- This will hold the configuration.
-local config = wezterm.config_builder()
-
-config.font = wezterm.font("Iosevka", { weight = "Regular", stretch = "Normal", style = "Normal" })
---  config.font = wezterm.font("JetBrains Mono")
-config.font_size = 13
-local custom_catppuccin = {
-	foreground = "#E8E2D9",
-	background = "#1c1917",
-	cursor_bg = "#E8E2D9",
-	cursor_border = "#E8E2D9",
-	cursor_fg = "#1c1917",
-	selection_bg = "#7ee6fd",
-	selection_fg = "#1c1917",
-	ansi = { "#1c1917", "#fda4af", "#86efac", "#fde68a", "#22d3ee", "#D19DFF", "#4fd1c5", "#E8E2D9" },
-	brights = { "#7ee6fd", "#f87171", "#D6409F", "#B48EAD", "#f9a8d4", "#f4c2c2", "#fba8c4", "#f4c2c2" },
-
-	-- Tab bar colors
-	tab_bar = {
-		background = "#1c1917",
-		active_tab = {
-			bg_color = "#DE51A8",
-			fg_color = "#1c1917",
+return {
+	-- color_scheme = "dayfox",
+	-- color_scheme = "Ayu Mirage",
+	-- color_scheme = "ayu",
+	-- color_scheme = "Ayu Light (Gogh)",
+	-- color_scheme = "Tokyo Night Day",
+	-- 	color_scheme = "Tokyo Night",
+	-- color_scheme = "Monokai (terminal.sexy)",
+	color_scheme = "Monokai (base16)",
+	-- color_scheme = "Catppuccin Mocha",
+	-- color_scheme = "Catppuccin Latte",
+	-- color_scheme = "Catppuccin Macchiato",
+	-- color_scheme = "Everforest Dark Medium (Gogh)",
+	default_prog = { "pwsh" },
+	enable_tab_bar = false,
+	font = wezterm.font("Cascadia Code NF"),
+	keys = {
+		{
+			action = wezterm.action.ActivatePaneDirection("Down"),
+			key = "DownArrow",
+			mods = "ALT",
 		},
-		inactive_tab = {
-			bg_color = "#1c1917",
-			fg_color = "#E8E2D9",
+		{
+			action = wezterm.action.ActivatePaneDirection("Left"),
+			key = "LeftArrow",
+			mods = "ALT",
 		},
-		inactive_tab_hover = {
-			bg_color = "#E8E2D9",
-			fg_color = "#1c1917",
+		{
+			action = wezterm.action.ActivatePaneDirection("Right"),
+			key = "RightArrow",
+			mods = "ALT",
 		},
-		new_tab = {
-			bg_color = "#1c1917",
-			fg_color = "#E8E2D9",
+		{
+			action = wezterm.action.ActivatePaneDirection("Up"),
+			key = "UpArrow",
+			mods = "ALT",
 		},
-		new_tab_hover = {
-			bg_color = "#E8E2D9",
-			fg_color = "#1c1917",
+		{
+			action = wezterm.action.ActivateTabRelative(-1),
+			key = "Tab",
+			mods = "CTRL|SHIFT",
+		},
+		{
+			action = wezterm.action.ActivateTabRelative(1),
+			key = "Tab",
+			mods = "CTRL",
+		},
+		{
+			action = wezterm.action.AdjustPaneSize({ "Down", 10 }),
+			key = "DownArrow",
+			mods = "ALT|SHIFT",
+		},
+		{
+			action = wezterm.action.AdjustPaneSize({ "Left", 10 }),
+			key = "LeftArrow",
+			mods = "ALT|SHIFT",
+		},
+		{
+			action = wezterm.action.AdjustPaneSize({ "Right", 10 }),
+			key = "RightArrow",
+			mods = "ALT|SHIFT",
+		},
+		{
+			action = wezterm.action.AdjustPaneSize({ "Up", 10 }),
+			key = "UpArrow",
+			mods = "ALT|SHIFT",
+		},
+		{
+			action = wezterm.action.CloseCurrentPane({ confirm = false }),
+			key = "w",
+			mods = "CTRL|ALT",
+		},
+		--[[
+		{
+			action = wezterm.action.CopyTo("Clipboard"),
+			key = "C",
+			mods = "CTRL",
+		},
+		{
+			action = wezterm.action.PasteFrom("Clipboard"),
+			key = "v",
+			mods = "CTRL",
+		},
+]]
+		{
+			action = wezterm.action.ScrollByLine(-10),
+			key = "UpArrow",
+			mods = "SHIFT",
+		},
+		{
+			action = wezterm.action.ScrollByLine(10),
+			key = "DownArrow",
+			mods = "SHIFT",
+		},
+		{
+			action = wezterm.action.ScrollByPage(-1),
+			key = "PageUp",
+		},
+		{
+			action = wezterm.action.ScrollByPage(1),
+			key = "PageDown",
+		},
+		{
+			action = wezterm.action.ScrollToBottom,
+			key = "End",
+			mods = "CTRL",
+		},
+		{
+			action = wezterm.action.ScrollToTop,
+			key = "Home",
+			mods = "CTRL",
+		},
+		{
+			action = wezterm.action.SpawnCommandInNewTab({ args = { "nvim", wezterm.config_dir .. "/wezterm.lua" } }),
+			key = ",",
+			mods = "CTRL",
+		},
+		{
+			action = wezterm.action.SpawnTab("CurrentPaneDomain"),
+			key = "t",
+			mods = "CTRL",
+		},
+		{
+			action = wezterm.action.SplitHorizontal,
+			key = "RightArrow",
+			mods = "CTRL|ALT",
+		},
+		{
+			action = wezterm.action.SplitVertical,
+			key = "DownArrow",
+			mods = "CTRL|ALT",
 		},
 	},
+	max_fps = 144,
 }
-
--- Add the custom color scheme
-config.color_schemes = {
-	["catppuccin-mocha"] = custom_catppuccin,
-}
-
--- config.font = wezterm.font("JetBrains Mono", { weight = "Bold", italic = true })
--- Apply the custom color scheme
--- config.color_scheme = "catppuccin-mocha"
-
--- Apply the custom color scheme
--- config.color_scheme = "catp-mocha"
--- This is where you actually apply your config choices
-
--- For example, changing the color scheme:
--- config.color_scheme = "catppuccin-frappe"
--- config.color_scheme = "catppuccin-frappe"
--- config.color_scheme = "catppuccin-macchiato"
--- config.color_scheme = "catppuccin-mocha"
--- config.color_scheme = "catppuccin-latte"
--- config.color_scheme = "Tokyo Night"
--- config.color_scheme = "tlh (terminal.sexy)"
--- config.color_scheme = "Tokyo Night (Gogh)"
--- config.color_scheme = "Tokyo Night Day"
--- config.color_scheme = "Tinacious Design (Light)"
--- config.color_scheme = "Oxocarbon Dark (Gogh)"
-config.color_scheme = "carbonfox"
--- and finally, return the configuration to wezterm
-
-config.default_prog = { "C:/Program Files/PowerShell/7/pwsh.exe", "-l" }
-return config

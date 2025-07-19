@@ -41,7 +41,7 @@ return {
       -- colorscheme = "asuna_dark",
       -- colorscheme = "ayu-mirage",
       -- colorscheme = "everforest",
-      colorscheme = "one_monokai",
+      -- colorscheme = "one_monokai",
       -- colorscheme = "tokyonight",
       -- colorscheme = "catppuccin-mocha",
       -- colorscheme = "catppuccin-latte",

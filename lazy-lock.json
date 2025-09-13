@@ -33,6 +33,7 @@
   "nvim-treesitter-textobjects": { "branch": "master", "commit": "89ebe73cd2836db80a22d9748999ace0241917a5" },
   "nvim-ts-autotag": { "branch": "main", "commit": "a1d526af391f6aebb25a8795cbc05351ed3620b5" },
   "one_monokai.nvim": { "branch": "main", "commit": "140938bcb9ffc8f89e9b44ac678830e0165a0d42" },
+  "onedarkpro.nvim": { "branch": "main", "commit": "cdd4d1d1ce734170a61766ffd2fb68f40165e188" },
   "oxocarbon.nvim": { "branch": "main", "commit": "1dc7b7ea9df60edd9547b667fd1f789ce9f028fb" },
   "persistence.nvim": { "branch": "main", "commit": "166a79a55bfa7a4db3e26fc031b4d92af71d0b51" },
   "plenary.nvim": { "branch": "master", "commit": "857c5ac632080dba10aae49dba902ce3abf91b35" },

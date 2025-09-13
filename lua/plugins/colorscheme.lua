@@ -9,6 +9,9 @@ return {
     "folke/tokyonight.nvim",
   },
   {
+    "olimorris/onedarkpro.nvim",
+  },
+  {
     "cesaralvarod/tokyogogh.nvim",
     lazy = false,
     priority = 1000,
@@ -49,6 +52,7 @@ return {
       -- colorscheme = "catppuccin-frappe",
       -- colorscheme = "tokyonight-day",
       -- colorscheme = "nightfox",
+      colorscheme = "onedark",
     },
   },
 }
